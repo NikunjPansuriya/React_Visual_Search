@@ -1,0 +1,85 @@
+/*
+  ----****----
+  author
+  Nikunj Pansuriya
+  ----****----
+*/
+
+.visual_search {
+  position: relative;
+}
+
+.visual_search .visual_search_wrapper {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.visual_search .search_input {
+  border: none;
+}
+
+.visual_search .search_input:focus {
+  outline: none;
+}
+
+.visual_search #visual_search_option_list {
+  margin-top: 0px;
+  border-radius: 0px;
+  left: 0px !important;
+  max-width: none;
+  width: 100%;
+}
+
+.visual_search .popover-content{
+  padding: 0px;
+}
+
+.visual_search .arrow {
+  display: none;
+}
+
+#visual_search_option_list .option {
+  display: block;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.visual_search .search_value_wrapper {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 2px;
+  position: relative;
+}
+
+.visual_search .input_text_value {
+  border: none;
+}
+
+.visual_search .input_text_value:focus {
+  outline: none;
+}
+
+.search_value_wrapper .value_close {
+  cursor: pointer;
+}
+
+#input_list_options {
+  width: 100%;
+  margin-top: 0px;
+  border-radius: 0px;
+  top: 27px !important;
+  left: 0px !important;
+}
+
+#input_list_options .option {
+  display: block;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#input_list_options .arrow {
+  display: none;
+}
