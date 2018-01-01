@@ -132,7 +132,7 @@ export default class InputList extends Component {
       return([
         <input
           key= "input_list"
-          ref= "target"
+          ref= {(input)=>{this.inputListTarget = input}}
           className= "input_text_value"
           value= {this.state.inputValue}
           onChange= {this.onChange}
@@ -144,7 +144,7 @@ export default class InputList extends Component {
           <Overlay
             key="overlay"
             show={this.state.showOptions}
-            target={() => ReactDOM.findDOMNode(this.refs.target)}
+            target={() => ReactDOM.findDOMNode(this.inputListTarget)}
             placement="bottom"
             container={this.context.searchComponent}
             >

@@ -34,10 +34,7 @@ export default class SearchComponent extends Component {
         return (
           <InputList data={data} {...defaultProps} />
         )
-      default:
-        return (
-          <span>Please Enter Type</span>
-        )
+      default: throw('Please set valid Type')
     }
   }
 

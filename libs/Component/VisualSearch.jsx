@@ -55,7 +55,7 @@ export default class VisualSearch extends Component {
    render() {
       return (
          <div className="visual_search">
-            <div className="visual_search_wrapper" ref="target">
+            <div className="visual_search_wrapper" ref={(searchTarget)=>{this.searchTarget = searchTarget}}>
               {
                 this.state.selectedValue.map((value,i)=>{
                   return (

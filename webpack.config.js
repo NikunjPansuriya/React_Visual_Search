@@ -27,10 +27,7 @@ var config = {
             // Extracting all css in one file, and file name is based on what you specified in filename
             filename: "visual_search.css",
             allChunks: true
-        }), new webpack.ProvidePlugin({
-            "React": "react",
-        }),
-
+        })
     ],
     resolve: {
         modules: [

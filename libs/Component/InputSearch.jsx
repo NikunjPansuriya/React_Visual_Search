@@ -31,7 +31,7 @@ export default class InputSearch extends Component {
         <Overlay
           key="overlay"
           show={this.state.showOptions}
-          target={() => ReactDOM.findDOMNode(this.context.visualSearch.refs.target)}
+          target={() => ReactDOM.findDOMNode(this.context.visualSearch.searchTarget)}
           placement="bottom"
           container={this.context.visualSearch}
           >
