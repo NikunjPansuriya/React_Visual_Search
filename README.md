@@ -28,7 +28,14 @@ Then open [http://localhost:8080/](http://localhost:8080/) to see demo examples.
 
 
 ## Quick Usage :
+* Add style in Your Application.
 ```sh
+import 'react_visual_search/libs/css/visual_search.css';
+```
+* Add Visual_Search in Your Application.
+
+```sh
+
 import VisualSearch from 'react_visual_search';
 ..
 ...
