@@ -13,7 +13,7 @@ var config = {
    entry:  (isProd ? APP_DIR + "/libs/Component/VisualSearch.jsx" : APP_DIR + "/example/main.js"),
    output: {
       path: (isProd ? BUILD_DIR : ROOT_DIR),
-      filename: 'bundle.js'
+      filename: 'visual_search.js'
    },
    plugins: [
         new HtmlWebpackPlugin({

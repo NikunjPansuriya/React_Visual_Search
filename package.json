@@ -1,11 +1,11 @@
 {
   "name": "react_visual_search",
-  "version": "1.0.1",
+  "version": "1.0.2-beta",
   "description": "React Basic Visual Search Library.",
-  "main": "dist/",
+  "main": "dist/visual_search",
   "repository": {
-   "type": "git",
-   "url": "https://github.com/NikunjPansuriya/React_Visual_Search.git"
+    "type": "git",
+    "url": "https://github.com/NikunjPansuriya/React_Visual_Search.git"
   },
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --progress --inline --hot --open",
@@ -42,12 +42,15 @@
     "react-bootstrap": "^0.31.5",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^2.30.1",
+    "font-awesome": "^4.7.0",
+    "loadash": "0.0.1",
+    "react-bootstrap": "^0.31.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
