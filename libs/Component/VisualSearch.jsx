@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {Button, Overlay, Popover} from 'react-bootstrap';
 
-import InputSearch from './InputSearch.jsx';
-import SearchComponent from './SearchComponent.jsx';
+import InputSearch from './InputSearch';
+import SearchComponent from './SearchComponent';
 
 export default class VisualSearch extends Component {
 

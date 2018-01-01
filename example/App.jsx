@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import VisualSearch from '../libs/Component/VisualSearch.jsx';
+import VisualSearch from '../libs/Component/VisualSearch';
 
 export default class App extends Component {
 

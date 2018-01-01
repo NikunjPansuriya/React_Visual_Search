@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Overlay, Popover} from 'react-bootstrap';
 import _ from 'lodash';
 
-import ValueComponent from './ValueComponent.jsx';
+import ValueComponent from './ValueComponent';
 
 export default class InputList extends Component {
 

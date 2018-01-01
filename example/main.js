@@ -8,7 +8,7 @@ import '../libs/Styles/visual_search.css';
 import './styles/style.css';
 
 /* import Project File */
-import App from './App.jsx';
+import App from './App';
 
 
 ReactDOM.render(<App />, document.getElementById('app'));

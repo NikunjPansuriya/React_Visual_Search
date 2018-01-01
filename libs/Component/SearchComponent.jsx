@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import InputText from './InputText.jsx';
-import InputList from './InputList.jsx';
+import InputText from './InputText';
+import InputList from './InputList';
 
 export default class SearchComponent extends Component {
   constructor(props) {

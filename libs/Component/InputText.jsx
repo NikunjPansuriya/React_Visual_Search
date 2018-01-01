@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ValueComponent from './ValueComponent.jsx';
+import ValueComponent from './ValueComponent';
 
 export default class InputText extends Component {
 
