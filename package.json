@@ -1,6 +1,6 @@
 {
   "name": "react_visual_search",
-  "version": "1.0.4-beta",
+  "version": "1.0.5-beta",
   "description": "React Basic Visual Search Library.",
   "main": "dist/visual_search",
   "repository": {
@@ -38,10 +38,8 @@
     "bootstrap": "^3.3.7",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.6",
-    "font-awesome": "^4.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-bootstrap": "^0.31.5",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "extract-text-webpack-plugin": "^3.0.2",
