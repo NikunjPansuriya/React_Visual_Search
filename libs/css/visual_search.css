@@ -63,6 +63,7 @@
 
 .search_value_wrapper .value_close {
   cursor: pointer;
+  margin: 2px;
 }
 
 #input_list_options {

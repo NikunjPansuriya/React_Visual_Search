@@ -22,6 +22,12 @@ export default class InputList extends Component {
     this.setData(nextProps);
   }
 
+  componentDidMount(){
+    if(this.state.showInput){
+      this.inputListTarget.focus();
+    }
+  }
+
   setData = (props) => {
     this.state.data = props.data;
     if(props.data.hasOwnProperty("value")){

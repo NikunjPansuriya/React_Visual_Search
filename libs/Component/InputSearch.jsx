@@ -18,7 +18,8 @@ export default class InputSearch extends Component {
     })
   }
 
-  onInputBlur = () => {
+  onOptionClick = (option) => {
+    this.props.onOptionClick(option);
     this.setState({
       showOptions: false
     })
@@ -39,9 +40,9 @@ export default class InputSearch extends Component {
             <div className="options_wrapper">
               {
                 this.context.visualSearch.props.category.length > 0 ?
-                  this.context.visualSearch.props.category.map((obj,i)=>{
+                  this.context.visualSearch.props.category.map((option,i)=>{
                     return (
-                      <span key={i} className="option" onMouseDown={(e)=>this.props.onOptionClick(obj)}>{obj.label}</span>
+                      <span key={i} className="option" onClick={()=>{this.onOptionClick(option)}}>{option.label}</span>
                     )
                   })
                 :

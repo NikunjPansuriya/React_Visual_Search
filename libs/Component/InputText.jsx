@@ -16,6 +16,12 @@ export default class InputText extends Component {
     this.state.data = props.data;
   }
 
+  componentDidMount(){
+    if(this.state.showInput){
+      this.refs.input_text.focus();
+    }
+  }
+
   componentWillReceiveProps(nextProps){
     this.setData(nextProps);
   }
@@ -64,6 +70,7 @@ export default class InputText extends Component {
           value= {this.state.data.value || ""}
           onChange= {this.onValueChange}
           onKeyPress= {this.onKeyPress}
+          onFocus= {this.onFocus}
           onBlur= {this.onBlur}
         >
         </input>
