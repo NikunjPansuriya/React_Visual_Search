@@ -10,9 +10,10 @@ Multiple filters can be applied to take broad range of data.
 * Support Search both text and list mode.
 
 
+## Examples
+![Visual Search Example](example.gif)
 
-
- ## Getting started
+## Getting started
 
 ```sh
 npm install react_visual_search
