@@ -18,7 +18,7 @@ export default class InputText extends Component {
 
   componentDidMount(){
     if(this.state.showInput){
-      this.refs.input_text.focus();
+      this.inputTextRef.focus();
     }
   }
 
@@ -57,7 +57,7 @@ export default class InputText extends Component {
     this.setState({
       showInput: true
     },()=>{
-      this.refs.input_text.focus();
+      this.inputTextRef.focus();
     })
   }
 
@@ -65,7 +65,7 @@ export default class InputText extends Component {
     if(this.state.showInput){
       return (
         <input
-          ref= "input_text"
+          ref= {(inputText) => {this.inputTextRef = inputText}}
           className= "input_text_value"
           value= {this.state.data.value || ""}
           onChange= {this.onValueChange}
