@@ -3,15 +3,15 @@
 
 
 ## Quick Overview
-react_visual_search allows to search data by attribute name.
+`react_visual_search` allows to search data by attribute name.
 Multiple filters can be applied to take broad range of data.
 
 # Features:
-* Support Search both text and list mode.
+* Search Support text,list and date mode.
 
 
 ## Examples
-![Visual Search Example](example.gif)
+![Visual Search Example](example2.gif)
 
 ## Getting started
 
@@ -51,7 +51,8 @@ render(){
       category= {[
         {label: "Name",name:"name",type: "text"},
         {label: "First Name",name:"firstName",type: "text"},
-        {label: "Gender", name:"gender",type:"list",options:[{label:"Male",value:"M"},{label:"Female",value:"F"}]}
+        {label: "Gender", name:"gender",type:"list",options:[{label:"Male",value:"M"},{label:"Female",value:"F"}]},
+        {label: "Date of Birth", name:"birthDate",type: "date", options:{format:"DD-MMM-YYYY",mode:"days"}}
       ]}
       onFilter= {this.onFilter}
     />
@@ -62,9 +63,12 @@ render(){
 
 ```
 
-## Support Types :
-* type: "text"
-* type: "list"
+## Supported Types :
+* `text`
+* `list`
+* `date`
+  * format: It accepts any [http://momentjs.com/docs/#/displaying/format/](Moment.js) date format.
+  * mode: The default view to display when the picker is shown ('days','month','year').
 
 ## License
 MIT.
