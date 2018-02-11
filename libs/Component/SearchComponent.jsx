@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import InputText from './InputText';
 import InputList from './InputList';
+import InputDate from './InputDate';
 
 export default class SearchComponent extends Component {
   constructor(props) {
@@ -33,6 +34,10 @@ export default class SearchComponent extends Component {
       case "list":
         return (
           <InputList data={data} {...defaultProps} />
+        )
+      case "date":
+        return (
+          <InputDate data={data} {...defaultProps} />
         )
       default: throw('Please set valid Type')
     }

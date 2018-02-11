@@ -5,6 +5,18 @@
   ----****----
 */
 
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
 .visual_search {
   position: relative;
 }
@@ -66,21 +78,75 @@
   margin: 2px;
 }
 
-#input_list_options {
+.popover_options {
   width: 100%;
-  margin-top: 0px;
+  margin-top: 0px !important;
   border-radius: 0px;
   top: 27px !important;
   left: 0px !important;
 }
 
-#input_list_options .option {
+.popover_options .option {
   display: block;
   padding: 5px 5px 5px 5px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
 }
 
-#input_list_options .arrow {
+.popover_options .arrow {
   display: none;
+}
+
+.pickeryear {
+  padding: 10px;
+}
+
+.pickeryear:hover {
+  background-color: #00a7de;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pickermonth {
+  padding: 10px;
+}
+
+.pickermonth:hover {
+  background-color: #00a7de;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pickerdate:hover {
+  background-color: #00a7de;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pickerheader {
+  margin-top: 2px;
+}
+
+.pickerheader .spanbtn {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.pickertable {
+  margin-bottom: 0px;
+}
+
+.pickertable tr th {
+  padding: 2px !important;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pickertable tr td {
+  padding: 2px !important;
+  border-top: none !important;
+}
+
+.pickertable tr td.pickerdate {
+  cursor: pointer;
 }

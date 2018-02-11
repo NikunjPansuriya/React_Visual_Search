@@ -154,7 +154,7 @@ export default class InputList extends Component {
             placement="bottom"
             container={this.context.searchComponent}
             >
-            <Popover id="input_list_options">
+            <Popover id="input_list_options" className="popover_options">
               <div className="list_wrapper">
                 {
                   this.showOptionList()

@@ -8,6 +8,7 @@
     "url": "https://github.com/NikunjPansuriya/React_Visual_Search.git"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "start": "NODE_ENV=development webpack-dev-server --progress --inline --hot --open",
     "build": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -50,7 +51,8 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
-    "react-bootstrap": "^0.31.0",
-    "prop-types": "^15.6.0"
+    "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
+    "react-bootstrap": "^0.31.0"
   }
 }

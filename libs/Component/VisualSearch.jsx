@@ -34,6 +34,7 @@ export default class VisualSearch extends Component {
   onCancelClick = (index) => {
     let selectedValue = this.state.selectedValue;
     selectedValue.splice(index,1);
+    this.inputSearch.setState({showOptions: false});
     this.setState({
       selectedValue: selectedValue
     },()=>{
@@ -64,6 +65,7 @@ export default class VisualSearch extends Component {
                 })
               }
               <InputSearch
+                ref={(inputSearch)=>{this.inputSearch = inputSearch}}
                 onOptionClick= {this.onOptionClick}
               />
             </div>
