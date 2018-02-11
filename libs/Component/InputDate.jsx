@@ -32,7 +32,7 @@ export default class InputDate extends Component {
 
   onBlur = () => {
     if(this.state.inputValue === "" && this.setCurrentDate){
-      this.refs.DatePicker.setCurrentDate();
+      this.DatePickerComp.setCurrentDate();
     } else if(this.setCurrentDate){
       this.setState({
         showOptions: false,
@@ -105,7 +105,7 @@ export default class InputDate extends Component {
           >
             <Popover id="input_date_options" className="popover_options">
               <div className="date_wrapper">
-                <DatePicker ref="DatePicker" data={this.state.data} setValue={this.setValue} {...this.state.data.options || {}} />
+                <DatePicker ref={(datepicker)=>{this.DatePickerComp= datepicker}} data={this.state.data} setValue={this.setValue} {...this.state.data.options || {}} />
               </div>
             </Popover>
           </Overlay>
