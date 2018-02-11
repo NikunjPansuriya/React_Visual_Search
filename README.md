@@ -67,7 +67,7 @@ render(){
 * `text`
 * `list`
 * `date`
-  * format: It accepts any [http://momentjs.com/docs/#/displaying/format/](Moment.js) date format.
+  * format: It accepts any `Moment.js` date format.
   * mode: The default view to display when the picker is shown ('days','month','year').
 
 ## License

@@ -1,6 +1,6 @@
 {
   "name": "react_visual_search",
-  "version": "1.0.7-beta",
+  "version": "1.0.8-beta",
   "description": "React Basic Visual Search Library.",
   "main": "dist/visual_search",
   "repository": {
@@ -8,7 +8,6 @@
     "url": "https://github.com/NikunjPansuriya/React_Visual_Search.git"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "start": "NODE_ENV=development webpack-dev-server --progress --inline --hot --open",
     "build": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
