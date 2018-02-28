@@ -56,7 +56,7 @@ export default class VisualSearch extends Component {
    render() {
       return (
          <div className="visual_search">
-            <div className="visual_search_wrapper" ref={(searchTarget)=>{this.searchTarget = searchTarget}}>
+            <div className="visual_search_wrapper clearfix" ref={(searchTarget)=>{this.searchTarget = searchTarget}}>
               {
                 this.state.selectedValue.map((value,i)=>{
                   return (
@@ -64,10 +64,12 @@ export default class VisualSearch extends Component {
                   )
                 })
               }
-              <InputSearch
-                ref={(inputSearch)=>{this.inputSearch = inputSearch}}
-                onOptionClick= {this.onOptionClick}
-              />
+              <div className="visual_input_wrapper">
+                <InputSearch
+                  ref={(inputSearch)=>{this.inputSearch = inputSearch}}
+                  onOptionClick= {this.onOptionClick}
+                />
+              </div>
             </div>
          </div>
       );

@@ -4,7 +4,7 @@ export default class ValueComponent extends Component {
 
   render(){
     return (
-      <span onClick={this.props.onValueClick}>{this.props.value || ""}</span>
+      <span className="search-value" onClick={this.props.onValueClick}>{this.props.value || ""}</span>
     )
   }
 }

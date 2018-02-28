@@ -46,11 +46,11 @@ export default class SearchComponent extends Component {
   render(){
     return(
       <span className="search_value_wrapper">
-        <span>{this.props.data.label + ":"}</span>
+        <span className="search-label">{this.props.data.label + " : "}</span>
         {
           this.renderType(this.props.data)
         }
-        <span className="value_close" onClick={this.onCancelClick}><i className="fa fa-close"></i></span>
+        <span className="value_close" onMouseDown={this.onCancelClick}><i className="fa fa-close"></i></span>
       </span>
     )
   }

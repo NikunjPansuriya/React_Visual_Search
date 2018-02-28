@@ -12,6 +12,43 @@ export default class InputSearch extends Component {
     }
   }
 
+  hideOptions = () => {
+    if (this.state.showOptions) {
+      this.setState({showOptions: false})
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleOutsideClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideClick, false);
+  }
+
+  handleOutsideClick = (e) => {
+    if (this.state.showOptions) {
+      let flag = true;
+      let element = e.target.parentElement;
+      while (flag) {
+        if (element === null) {
+          flag = false;
+          if (e.target.nodeName === "HTML") {
+            this.hideOptions();
+          }
+          return;
+        }
+        if (element.classList.contains("visual_search")) {
+          flag = false;
+        } else if (element.nodeName === "BODY") {
+          flag = false;
+          this.hideOptions();
+        }
+        element = element.parentElement;
+      }
+    }
+  }
+
   onInputFocus = () => {
     this.setState({
       showOptions: true
@@ -27,7 +64,7 @@ export default class InputSearch extends Component {
 
   render(){
     return([
-      <input className="search_input" key="search_input" onFocus={this.onInputFocus} onBlur={this.onInputBlur}/>,
+      <input className="search_input" key="search_input" onFocus={this.onInputFocus}/>,
         this.state.showOptions ?
         <Overlay
           key="overlay"
