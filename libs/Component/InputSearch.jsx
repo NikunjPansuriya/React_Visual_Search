@@ -55,6 +55,12 @@ export default class InputSearch extends Component {
     })
   }
 
+  onInputKeyDown = (e) => {
+    if(e.which === 8 && e.target.value === ""){
+      this.props.onBackspaceRemove();
+    }
+  }
+
   onOptionClick = (option) => {
     this.props.onOptionClick(option);
     this.setState({
@@ -64,7 +70,7 @@ export default class InputSearch extends Component {
 
   render(){
     return([
-      <input className="search_input" key="search_input" onFocus={this.onInputFocus}/>,
+      <input className="search_input" key="search_input" onFocus={this.onInputFocus} onKeyDown={this.onInputKeyDown}/>,
         this.state.showOptions ?
         <Overlay
           key="overlay"

@@ -63,6 +63,12 @@ render(){
 
 ```
 
+## Props
+| Parameter | Type   | Description |
+| --------- | ----   | ----------- |
+| className | string | className for the search element. |
+| removeOnBackspace | boolean | on pressing backspace button remove the last item. |
+
 ## Supported Types :
 * `text`
 * `list`

@@ -42,6 +42,22 @@ export default class VisualSearch extends Component {
     })
   }
 
+  onBackspaceRemove = () => {
+    if(this.props.hasOwnProperty("removeOnBackspace") && this.props.removeOnBackspace === true && this.state.selectedValue.length > 0){
+      let selectedValue = this.state.selectedValue;
+      selectedValue.splice(selectedValue.length - 1,1);
+      this.inputSearch.setState({showOptions: false});
+      this.setState({
+        selectedValue: selectedValue
+      },()=>{
+        if(this.state.selectedValue.length === 0){
+          this.inputSearch.setState({showOptions: true});
+        }
+        this.onUpdateFilter();
+      })
+    }
+  }
+
   onUpdateFilter = () => {
     let selectedValue = this.state.selectedValue;
     let values = selectedValue.map((value)=>{
@@ -55,7 +71,7 @@ export default class VisualSearch extends Component {
 
    render() {
       return (
-         <div className="visual_search">
+         <div className={"visual_search " + (this.props.className ? this.props.className : "")}>
             <div className="visual_search_wrapper clearfix" ref={(searchTarget)=>{this.searchTarget = searchTarget}}>
               {
                 this.state.selectedValue.map((value,i)=>{
@@ -68,6 +84,7 @@ export default class VisualSearch extends Component {
                 <InputSearch
                   ref={(inputSearch)=>{this.inputSearch = inputSearch}}
                   onOptionClick= {this.onOptionClick}
+                  onBackspaceRemove= {this.onBackspaceRemove}
                 />
               </div>
             </div>

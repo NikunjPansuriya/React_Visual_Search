@@ -72,6 +72,7 @@
   position: relative;
   display: block;
   float: left;
+  background-color: #eee;
 }
 
 .visual_search .input_text_value {
