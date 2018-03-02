@@ -64,10 +64,12 @@ render(){
 ```
 
 ## Props
-| Parameter | Type   | Description |
-| --------- | ----   | ----------- |
-| className | string | className for the search element. |
-| removeOnBackspace | boolean | on pressing backspace button remove the last item. |
+| Parameter | Type   | Default Value | Description |
+| --------- | ----   | ------------- | ----------- |
+| className | string | undefined | className for the search element. |
+| removeOnBackspace | boolean | false | on pressing backspace button remove the last item. |
+| filterOptions | boolean | false | enable search for options dropdown. |
+| removeOnSelect | boolean | false | Removed selected option from options dropdown. |
 
 ## Supported Types :
 * `text`
