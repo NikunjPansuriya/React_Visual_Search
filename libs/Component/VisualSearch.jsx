@@ -43,7 +43,7 @@ export default class VisualSearch extends Component {
   }
 
   onBackspaceRemove = () => {
-    if(this.props.hasOwnProperty("removeOnBackspace") && this.props.removeOnBackspace === true && this.state.selectedValue.length > 0){
+    if(this.props.hasOwnProperty("removeOnBackspace") && this.props.removeOnBackspace === true){
       let selectedValue = this.state.selectedValue;
       selectedValue.splice(selectedValue.length - 1,1);
       this.inputSearch.setState({showOptions: false});
@@ -91,6 +91,12 @@ export default class VisualSearch extends Component {
          </div>
       );
    }
+}
+
+VisualSearch.defaultProps = {
+  removeOnBackspace: false,
+  filterOptions: false,
+  removeOnSelect: false
 }
 
 VisualSearch.childContextTypes = {

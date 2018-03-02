@@ -2,13 +2,16 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import {Overlay, Popover} from 'react-bootstrap';
+import _ from 'lodash';
 
 export default class InputSearch extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      showOptions: false
+      showOptions: false,
+      inputSearchValue: "",
+      selectedOptions: []
     }
   }
 
@@ -56,21 +59,79 @@ export default class InputSearch extends Component {
   }
 
   onInputKeyDown = (e) => {
-    if(e.which === 8 && e.target.value === ""){
+    if(e.which === 8 && e.target.value === "" && this.context.visualSearch.state.selectedValue.length > 0){
       this.props.onBackspaceRemove();
+    }
+  }
+
+  onValueSearch = (e) => {
+    if (this.context.visualSearch.props.filterOptions) {
+      let value = e.target.value;
+      this.setState({
+        inputSearchValue: value
+      })
+    }
+  }
+
+  onInputKeyPress = (e) => {
+    if (e.which === 13 && this.state.inputSearchValue !== "") {
+      let selectedOptions = this.getSelectedOptions();
+      if (selectedOptions.length > 0) {
+        this.onOptionClick(selectedOptions[0]);
+      }
+    }
+  }
+
+  getSelectedOptions = () => {
+    let options = this.context.visualSearch.props.category;
+    let selectedOptions = options;
+    if (this.context.visualSearch.props.removeOnSelect && this.context.visualSearch.state.selectedValue.length > 0) {
+      selectedOptions = _.filter(selectedOptions, (option) => {
+        let obj = _.find(this.context.visualSearch.state.selectedValue, {name: option.name});
+        return obj === undefined;
+      })
+    }
+    if (this.context.visualSearch.props.filterOptions) {
+      if (this.state.inputSearchValue !== "") {
+        selectedOptions = _.filter(selectedOptions, (option) => {
+          return option.label.toLowerCase().indexOf(this.state.inputSearchValue.toLowerCase()) >= 0;
+        })
+      }
+    }
+    return selectedOptions;
+  }
+
+  renderOptions = () => {
+    let selectedOptions = this.getSelectedOptions();
+    if (selectedOptions.length > 0) {
+      return selectedOptions.map((option, i) => {
+        let optionClass = "option";
+        if (this.context.visualSearch.props.removeOnSelect === false) {
+          let opt = _.find(this.context.visualSearch.state.selectedValue, {name: option.name});
+          if (opt !== undefined) {
+            optionClass += " selected";
+          }
+        }
+        return (
+          <span key={i} className={optionClass} onClick={()=>{this.onOptionClick(option)}}>{option.label}</span>
+        )
+      })
+    } else {
+      return (<span className="option">No Record's Found !!!</span>)
     }
   }
 
   onOptionClick = (option) => {
     this.props.onOptionClick(option);
     this.setState({
-      showOptions: false
+      showOptions: false,
+      inputSearchValue: ""
     })
   }
 
   render(){
     return([
-      <input className="search_input" key="search_input" onFocus={this.onInputFocus} onKeyDown={this.onInputKeyDown}/>,
+      <input className="search_input" key="search_input" onFocus={this.onInputFocus} value={this.state.inputSearchValue} onChange={this.onValueSearch} onKeyDown={this.onInputKeyDown} onKeyPress={this.onInputKeyPress}/>,
         this.state.showOptions ?
         <Overlay
           key="overlay"
@@ -82,14 +143,7 @@ export default class InputSearch extends Component {
           <Popover id="visual_search_option_list">
             <div className="options_wrapper">
               {
-                this.context.visualSearch.props.category.length > 0 ?
-                  this.context.visualSearch.props.category.map((option,i)=>{
-                    return (
-                      <span key={i} className="option" onClick={()=>{this.onOptionClick(option)}}>{option.label}</span>
-                    )
-                  })
-                :
-                  <span className="option">No Record's Found !!!</span>
+                this.renderOptions()
               }
             </div>
           </Popover>
