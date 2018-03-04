@@ -70,6 +70,7 @@ render(){
 | removeOnBackspace | boolean | false | on pressing backspace button remove the last item. |
 | filterOptions | boolean | false | enable search for options dropdown. |
 | removeOnSelect | boolean | false | Removed selected option from options dropdown. |
+| defaultValue | array | undefined | set initial value in visual search. e.g. ``` [{'name':'name','value': 'test'},{'name':'gender','value': 'M'}] ``` |
 
 ## Supported Types :
 * `text`
