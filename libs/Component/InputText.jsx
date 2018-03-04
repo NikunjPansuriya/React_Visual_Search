@@ -14,6 +14,9 @@ export default class InputText extends Component {
 
   setData = (props) => {
     this.state.data = props.data;
+    if (props.data.hasOwnProperty("value")) {
+      this.state.showInput = false;
+    }
   }
 
   componentDidMount(){

@@ -14,6 +14,20 @@ export default class VisualSearch extends Component {
     this.state = {
       selectedValue: []
     }
+    this.setDefaultValue();
+  }
+
+  setDefaultValue = () => {
+    if (this.props.defaultValue !== undefined && _.isArray(this.props.defaultValue) && this.props.defaultValue.length > 0) {
+      let selectedValue = [];
+      this.props.defaultValue.map((obj) => {
+        let option = _.find(this.props.category, {name: obj.name});
+        if (option !== undefined) {
+          selectedValue.push(_.assign(_.clone(option), _.pick(obj, "name", "value")));
+        }
+      })
+      this.state.selectedValue = selectedValue;
+    }
   }
 
   getChildContext = () => {
@@ -96,7 +110,8 @@ export default class VisualSearch extends Component {
 VisualSearch.defaultProps = {
   removeOnBackspace: false,
   filterOptions: false,
-  removeOnSelect: false
+  removeOnSelect: false,
+  defaultValue: undefined
 }
 
 VisualSearch.childContextTypes = {

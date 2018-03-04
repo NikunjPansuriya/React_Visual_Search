@@ -60,6 +60,10 @@ export default class InputDate extends Component {
 
   setData = (props) => {
     this.state.data = props.data;
+    if (props.data.hasOwnProperty("value")) {
+      this.state.showInput = false;
+      this.state.inputValue = props.data.value;
+    }
   }
 
   setValue = (value) => {
